@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifeline - Login & Registration</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+<div class="login-container">
+    <div class="login-brand">
+        <div class="logo">✚</div>
+        <h1>Lifeline</h1>
+        <p>Dispatch & Emergency Response System</p>
+        <span>Universidad de Dagupan</span>
+    </div>
+    <div class="login-card">
+        <div class="auth-tabs">
+            <button id="loginTabBtn" class="auth-tab active" onclick="switchAuthTab('login')">Sign In</button>
+            <button id="registerTabBtn" class="auth-tab" onclick="switchAuthTab('register')">Register Account</button>
+        </div>
+
+        <!-- SIGN IN FORM (STRICT REGISTERED USER LOGIN) -->
+        <div id="loginFormContainer">
+            <h2>Welcome Back</h2>
+            <p class="login-description">Sign in using your registered Universidad de Dagupan Student ID.</p>
+            <form id="loginForm">
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" placeholder="23-1234-567" required pattern="2\d-\d{4}-\d{3}">
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                
+                <button type="submit" class="primary-button">Sign In</button>
+            </form>
+            <p class="demo-login">Must be a registered Student ID. Format: 2X-XXXX-XXX</p>
+        </div>
+
+        <!-- REGISTRATION FORM -->
+        <div id="registerFormContainer" style="display: none;">
+            <h2>Create Account</h2>
+            <p class="login-description">Register your Student ID to connect to Lifeline.</p>
+            <form id="registerForm">
+                <label for="regFullName">Full Name</label>
+                <input type="text" id="regFullName" placeholder="e.g. Juan Dela Cruz" required>
+                
+                <label for="regStudentId">Student ID</label>
+                <input type="text" id="regStudentId" placeholder="2X-XXXX-XXX (e.g. 23-1234-567)" required pattern="2\d-\d{4}-\d{3}">
+                
+                <label for="regCourse">Year & Course</label>
+                <input type="text" id="regCourse" placeholder="e.g. BS Information Technology" required>
+                
+                <label for="regRole">Account Type / Role</label>
+                <select id="regRole" required>
+                    <option value="user">User / Student</option>
+                    <option value="member">CPR Member (Responders/Medics)</option>
+                    <option value="officer">CPR Officer (Executives/Officers)</option>
+                </select>
+
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" placeholder="Create a password" required>
+                
+                <button type="submit" class="primary-button">Register Account</button>
+            </form>
+            <p class="demo-login">Registering as CPR Member/Officer will list you as an Responder.</p>
+        </div>
+    </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
